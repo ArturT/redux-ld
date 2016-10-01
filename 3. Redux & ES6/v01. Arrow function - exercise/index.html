@@ -33,18 +33,18 @@
     </div>
     <script>
 
-      $('#decrement').click(function () {
+      $('#decrement').click(() => {
           store.dispatch(decrease());
         })
-      $('#incrementAsync').click(function () {
+      $('#incrementAsync').click(() => {
           store.dispatch(asyncIncrease);
         })
-      $('#sum').click(function() {
+      $('#sum').click(() => {
           var a = $('#a').val();
           var b = $('#b').val();
           store.dispatch(getSum(a, b));
         })
-      $('#randomImagesButton').click(function () {
+      $('#randomImagesButton').click(() => {
           store.dispatch(getRandomImages);
         })
     </script>

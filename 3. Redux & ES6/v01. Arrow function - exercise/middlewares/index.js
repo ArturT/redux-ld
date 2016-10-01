@@ -9,9 +9,9 @@ const logger = store => next => action => {
 }
 
 //second middleware
-const crashReporter = function(store){
-    return function(next){
-        return function(action){
+const crashReporter = (store) => {
+    return next => {
+        return action => {
             try{
                 next(action);
             }catch(err){
@@ -25,9 +25,9 @@ const crashReporter = function(store){
     }
 }
 //third middleware
-const thunk = function(store){
-    return function(next){
-        return function(action){
+const thunk = (store) => {
+    return next => {
+        return action => {
             if(typeof action === 'function'){
                 action(store.dispatch, store.getState());
             }else{

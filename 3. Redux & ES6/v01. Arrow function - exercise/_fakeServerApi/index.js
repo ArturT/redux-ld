@@ -1,8 +1,8 @@
 var _fakeServerApi = {
     // imitate the server API
-    increaseCount : function ( currentCount, cb ){
-        setTimeout(function(){
+    increaseCount : ( currentCount, cb ) => {
+        setTimeout(() => {
             cb(currentCount + 1);
-        }, 5000)    
+        }, 5000)
     }
 }
