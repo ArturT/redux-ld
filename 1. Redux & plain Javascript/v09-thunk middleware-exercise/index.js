@@ -13,6 +13,12 @@ function render() {
     }else{
          document.getElementById('status').innerHTML = "loaded";
     }
+
+    document.getElementById('imagesStatus').innerHTML = state.randomImages.status;
+    $('#imagesList').html('') // clear image list
+    $.each(state.randomImages.urls, function(i, url) {
+      $('#imagesList').append('<img src="'+url+'" style="width:300px"/>')
+    })
 };
 store.subscribe(render);
 // ~end step 1.3
