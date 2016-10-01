@@ -13,7 +13,7 @@ function randomImages(currentState, action) {
       return nextState;
     case 'SHOW_RANDOM_IMAGES':
       nextState.status = 'loaded'
-      nextState.urls = $.map(action.data, function(n) {
+      nextState.urls = action.data.map(function(n) {
         return n.link;
       });
       return nextState;
