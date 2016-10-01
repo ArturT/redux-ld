@@ -1,12 +1,35 @@
 // step 2.2
 function counter(currentState, action){
     var DEFAULT_STATE = 0;
-    var nextState = '?'
+    var nextState;
+    if (currentState === undefined) {
+      nextState = DEFAULT_STATE;
+    } else {
+      switch(action.type) {
+        case 'INCREMENT':
+          nextState = currentState + 1;
+          break;
+        case 'DECREMENT':
+          nextState = currentState - 1;
+          break;
+        default:
+          nextState = currentState;
+      }
+    }
     return nextState;
 }
 function sum(currentState, action){
     var DEFAULT_STATE = 3;
-    var nextState = '???'
+    var nextState;
+    if (currentState === undefined) {
+       nextState = DEFAULT_STATE;
+    } else {
+      if (action.type == 'SUM') {
+        nextState = parseInt(action.a) + parseInt(action.b);
+      } else {
+        nextState = currentState;
+      }
+    }
     return nextState;
 }
 function combineReducer(currentState, action) {
